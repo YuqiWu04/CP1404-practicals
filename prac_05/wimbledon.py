@@ -9,7 +9,8 @@ def main():
     name_time = count_name_times(names)
     display_data(name_time)
     country = count_winner_country(winner_detail)
-    display_winner_country(country)
+    number = count_country_number(country)
+    display_winner_country(number, country)
 
 
 def read_file():
@@ -59,10 +60,15 @@ def count_winner_country(winner_detail):
     country = sorted(country)
     return country
 
+def count_country_number(country):
+    """calculate the country number """
+    number = len(country)
+    return number
 
-def display_winner_country(country):
+
+def display_winner_country(number, country):
     """display the winner country"""
-    print("These 12 countries have won Wimbledon: ")
+    print(f"These {number} countries have won Wimbledon: ")
     country = ", ".join(country)
     print(f"{country}")
 
