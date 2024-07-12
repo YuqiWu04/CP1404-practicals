@@ -10,11 +10,12 @@ while name != "":
     cost = float(input("Cost:$ "))
     guitar = Guitar(name, year, cost)
     guitars.append(guitar)
-    print(f"{guitar} added")
+    print(f"{guitar.name} ({guitar.year}): ${guitar.cost} added")
     name = input("Name: ")
 max_name_length = max([len(guitar.name) for guitar in guitars])
+max_year_length = max([len(str(guitar.year)) for guitar in guitars])
 # Iterate through the list of guitars and include the index number
 for i, guitar in enumerate(guitars, 1):
     # Return a string if the value of is_vintage() is True otherwise empty
     vintage_string = "(vintage)" if guitar.is_vintage() else ""
-    print(f"Guitar {i}: {guitar.name:>{max_name_length}} ({guitar.year}), worth ${guitar.cost:>{20},.2f} {vintage_string} ")
+    print(f"Guitar {i}: {guitar.name:>{max_name_length}} ({guitar.year:>{max_year_length}}), worth ${guitar.cost:>15,.2f} {vintage_string} ")
