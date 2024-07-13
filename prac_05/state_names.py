@@ -21,3 +21,4 @@ while state_code != "":
 for i in CODE_TO_NAME:
     print(f"{i} is {CODE_TO_NAME[i]}")
 
+
