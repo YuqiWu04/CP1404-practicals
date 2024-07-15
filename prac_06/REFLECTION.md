@@ -22,3 +22,4 @@ For the possibility of duplication in some of the code, I've realised that I'm g
 ## What is one request you have or change you suggest for this subject and/or your IT degree overall?
 
 I think the course is pretty good now, but I'm not very proficient in terms of practice, I'd recommend being able to increase the amount of practice in the course to improve the ability to write code
+
