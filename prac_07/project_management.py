@@ -10,9 +10,12 @@ MENU = ("- (L)oad projects\n"
         "- (U)pdate project\n"
         "- (Q)uit ")
 def main():
-    print(MENU)
+    """project management pogress"""
     file_name = FILENAME
     projects_data = read_file(file_name)
+    print("Welcome to Pythonic Project Management")
+    print(f"Loaded {len(projects_data)} projects from projects.txt")
+    print(MENU)
     choice = input(">>>").upper()
     while choice != "Q":
         if choice == "L":
@@ -120,9 +123,9 @@ def update_project(projects_data):
         print(f"{index_number-1} {project}")
     number = get_valid_number(projects_data)
     print(projects_data[number])
-    new_percentage = int(input("New percentage: "))
+    new_percentage = get_valid_data("New percentage: ")
     projects_data[number].completion_percentage = new_percentage
-    new_priority = int(input("New Priority: "))
+    new_priority = get_valid_data("New Priority: ")
     projects_data[number].priority = new_priority
     print(projects_data[number])
 
@@ -146,11 +149,10 @@ def get_valid_number(projects_data):
 
 def filer_projects(projects_data):
     """filter projects by date"""
-    new_projects = projects_data
     date_string = input("Date (d/m/yyyy): ")
     date = datetime.datetime.strptime(date_string, "%d/%m/%Y").date()
-    new_projects.sort()
-    for line in projects_data:
+    new_projects = sorted(projects_data)
+    for line in new_projects:
         start_date = datetime.datetime.strptime(line.start_date, "%d/%m/%Y").date()
         if start_date >= date:
             print(line)
@@ -166,7 +168,6 @@ def get_valid_data(prompt):
                 print("Error!")
             else:
                 initial = True
-
         except ValueError:
             print("Please enter valid data")
     return data
