@@ -23,4 +23,5 @@ class Guitar:
         return self.get_age() >= LIMIT_YEAR
 
 
+
 guitar = Guitar()

@@ -17,3 +17,4 @@ class Project:
                f" completion: {self.completion_percentage}%"
 
 
+

@@ -47,5 +47,6 @@ def upload_file(guitars):
             print(f"{d.name}, {d.year}, {d.cost}", file=new_infile)
 
 
+
 main()
 
