@@ -1,6 +1,7 @@
 from prac_09.car import Car
 import random
 class UnreliableCar(Car):
+    """unreliable car class"""
     def __init__(self, name, fuel, reliability):
         """the initial value of this subclass from the parent class and a new value"""
         super().__init__(name, fuel)
