@@ -18,3 +18,4 @@ dynamically_typed_languages = [programming.name for programming in languages if 
 print(f"The dynamically typed languages are:")
 for i in dynamically_typed_languages:
     print(i)
+# test again
